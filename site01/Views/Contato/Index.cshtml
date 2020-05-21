@@ -1,0 +1,40 @@
+﻿
+@{
+    // Layout = "_Layout";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+
+@{
+    ViewBag.Title = "Conteudo";
+
+        <!-- Content here -->
+    }
+<form method="post" action="/contato/recebercontato">
+<div class="form-group">
+    <label for="nome">Nome</label>
+    <input type="text" name="nome" class="form-control" id="nome" placeholder="Digite o seu nome">
+    @Html.ValidationMessage("nome")
+
+</div>
+<div class="form-group">
+    <label for="email">E-mail</label>
+    <input type="text" name="email" class="form-control" id="email" placeholder="Digite o seu E-mail">
+    @Html.ValidationMessage("email")
+</div>
+<div class="form-group">
+    <label for="Assunto">Assunto</label>
+    <input type="text" name="Assunto" class="form-control" id="Assunto" placeholder="Digite o Assunto">
+    @Html.ValidationMessage("assunto")
+</div>
+<div class="form-group">
+    <label for="Mensagem">Mensagem</label>
+    <textarea name="Mensagem" class="form-control" id="Mensagem"> </textarea>
+    @Html.ValidationMessage("mensagem")
+</div>
+
+<button type="submit" class="btn btn-primary">Enviar</button>
+</form>
+
+
+@ViewBag.Mensagem
